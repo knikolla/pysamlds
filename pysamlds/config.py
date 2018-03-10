@@ -15,4 +15,3 @@
 DISCOFEED = 'https://sso.massopen.cloud/Shibboleth.sso/DiscoFeed'
 
 TARGET_LOGO_WIDTH = 100
-TARGET_LOGO_HEIGHT = 100

@@ -12,6 +12,8 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 
+from urllib import parse
+
 from pysamlds import app
 from pysamlds import discovery
 
@@ -20,8 +22,15 @@ import flask
 
 @app.app.route('/', methods=['GET'])
 def index():
+    return_to = flask.request.args.get('return', '')
+    if not return_to:
+        flask.abort(400)
+
     idps = discovery.fetch_entities()
-    return flask.render_template('index.html', idps=idps.values())
+    return_to = parse.unquote(return_to)
+    return flask.render_template('index.html',
+                                 return_to=return_to,
+                                 idps=idps.values())
 
 
 if __name__ == '__main__':

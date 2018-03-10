@@ -12,11 +12,16 @@
 <body>
     <h1>MassOpenCloud - Identity Provider Selection</h1>
 
-    <ul>
+    <form method="get" action="{{ return_to }}" id="idp_form">
+        <input type="submit">
+    </form>
+
+    <select name="entityID" form="idp_form">
         {% for idp in idps %}
-        <li>{{ idp.name }}</li>
+            <option value="{{idp.entity_id}}">{{ idp.name }}</option>
         {% endfor %}
-    </ul>
+    </select>
+
 
 </body>
 </html>
