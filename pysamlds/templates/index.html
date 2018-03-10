@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MassOpenCloud - Identity Provider Selection</title>
+    <style>
+        h1 {
+            border-bottom: black 0.1em solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>MassOpenCloud - Identity Provider Selection</h1>
+
+    <ul>
+        {% for idp in idps %}
+        <li>{{ idp.name }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
